@@ -4,6 +4,14 @@ export const StyleLogin = styled.main`
   display: flex;
   flex-direction: column;
 
+  .login
+  {
+    background: var(--grey-3);
+    width: 285px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
   header
   {
     text-align: center;
@@ -17,13 +25,14 @@ export const StyleLogin = styled.main`
     font-family: var(--font-family);
     color: var(--grey-0);
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 20px 0 20px;
   }
 
   form
   {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 10px auto;
   }
 
@@ -75,7 +84,7 @@ export const StyleLogin = styled.main`
     background: var(--color-primary);
     border-radius: 4px;
     border: none;
-    margin: 30px auto;
+    margin: 10px auto;
     text-align: center;
     padding: 15px;
   }
@@ -107,7 +116,7 @@ export const StyleLogin = styled.main`
     border: none;
     margin: 30px auto;
     text-align: center;
-    padding: 15px;
+    padding:15px;
   }
 
   .cadastre:hover
@@ -160,6 +169,17 @@ export const StyleLogin = styled.main`
       font-size: var(--font-4);
       width: 324px;
       height: 48px;
+    }
+
+    .login
+    {
+      background: var(--grey-3);
+      width: 360px;
+      height: 450px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `

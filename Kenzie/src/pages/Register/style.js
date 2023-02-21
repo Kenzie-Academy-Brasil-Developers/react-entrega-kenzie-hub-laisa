@@ -31,6 +31,14 @@ export const StyleRegister = styled.main`
     background: var(--grey-1);
   }
 
+  .cadastrarUsuario
+  {
+    background: var(--grey-3);
+    width: 285px;
+    height: 700px;
+    margin: 0 auto;
+  }
+
   h2
   {
     font-size: var(--font-5);
@@ -211,6 +219,17 @@ export const StyleRegister = styled.main`
       width: 320px;
       height: 48px;
       background: var(--color-primary-negative);
+    }
+
+    .cadastrarUsuario
+    {
+      background: var(--grey-3);
+      width: 400px;
+      height: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 

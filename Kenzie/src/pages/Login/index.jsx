@@ -28,6 +28,7 @@ const Login = () =>
       <header>
         <img src={Logo} />
       </header>
+      <div className='login'>
       <h1>Login</h1>
       <form onSubmit={handleSubmit(loginUser)}>
       <Input className='input'
@@ -42,7 +43,10 @@ const Login = () =>
       <button className='entrar' type='submit'>Entrar</button>
       </form>
       <p>Ainda não possui uma conta?</p>
-      <Link className='cadastre' to='/register'>Cadastre-se</Link>
+      <Link to='/register'>
+        <button className='cadastre'>Cadastre-se</button>
+      </Link>
+      </div>
     </StyleLogin>
   )
 }

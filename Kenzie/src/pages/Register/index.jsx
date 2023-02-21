@@ -40,6 +40,7 @@ const Register = () =>
         <img src={Logo} />
         <Link className='voltar' to='/'>Voltar</Link>
       </header>
+      <div className='cadastrarUsuario'>
       <h2>Crie sua conta</h2>
       <p>Rápido e grátis, vamos nessa</p>
       <form onSubmit={handleSubmit(registerUser)}>
@@ -109,6 +110,7 @@ const Register = () =>
         <p>{errors.course_module?.message}</p>
         <button className='cadastrar' type='submit'>Cadastrar</button>
       </form>
+      </div>
     </StyleRegister>
   );
 };

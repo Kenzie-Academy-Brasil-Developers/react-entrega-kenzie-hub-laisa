@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const StyleAddModal = styled.div`
   background: var(--grey-3);
   width: 296px;
-  height: 274px;
+  height: 340px;
   position: absolute;
   top: 200px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 
   .div
@@ -18,7 +20,7 @@ export const StyleAddModal = styled.div`
     background: var(--grey-2);
     height: 50px;
     border: none;
-    margin: 10px auto;
+    margin: 0px auto;
   }
 
   h2
@@ -108,5 +110,10 @@ export const StyleAddModal = styled.div`
     color: var(--white);
     margin-top: 15px;
     cursor: pointer;
+  }
+
+  @media (min-width: 1100px) {
+    width: 296px;
+    height: 340px;
   }
 `

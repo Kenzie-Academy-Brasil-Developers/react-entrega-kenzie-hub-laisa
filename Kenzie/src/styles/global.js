@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
   body
   {
-    background: var(--grey-3);
+    background: black;
   }
 `
 

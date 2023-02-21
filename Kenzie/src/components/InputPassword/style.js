@@ -13,7 +13,7 @@ export const StyleInputPassword = styled.fieldset`
     background: var(--grey-2);
     border: none;
     margin-left: 230px;
-    top: 305px;
+    top: 274px;
     border-radius: 3.21px;
     color: var(--grey-1);
   }
@@ -23,7 +23,7 @@ export const StyleInputPassword = styled.fieldset`
     {
       height: 49px;
       margin-left: 280px;
-      top: 325px;
+      top: 304px;
     }
   }
 `

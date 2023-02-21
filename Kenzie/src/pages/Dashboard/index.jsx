@@ -18,14 +18,12 @@ const Dashboard = () =>
         <h2>Olá, {userLogged.name}</h2>
         <p>{userLogged.course_module}</p>
       </div>
-      <div>
-        <div className='tech'>
-          <h3>Tecnologias</h3>
-          <button className='descricao' onClick={() => setModalOpen(true)}><IoMdAddCircle/></button>
-          {modalOpen ? <AddModal/> : null}
-        </div>
+      <div className='tech'>
+        <h3>Tecnologias</h3>
+        <button className='descricao' onClick={() => setModalOpen(true)}><IoMdAddCircle/></button>
+        {modalOpen ? <AddModal/> : null}
       </div>
-      <div>
+      <div className='list'>
         {userLogged.techs?.length ? (
           <ul className='techAdd'>
             {userLogged.techs.map

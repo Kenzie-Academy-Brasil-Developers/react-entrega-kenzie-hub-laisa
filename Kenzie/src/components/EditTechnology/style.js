@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const StyleEditModal = styled.div`
   background: var(--grey-3);
   width: 296px;
-  height: 274px;
+  height: 380px;
   position: absolute;
   top: 250px;
+  display: flex;
   align-items: center;
+  flex-direction: column;
 
   div
   {
@@ -18,7 +20,6 @@ export const StyleEditModal = styled.div`
     background: var(--grey-2);
     height: 50px;
     border: none;
-    margin: 10px auto;
   }
 
   h2

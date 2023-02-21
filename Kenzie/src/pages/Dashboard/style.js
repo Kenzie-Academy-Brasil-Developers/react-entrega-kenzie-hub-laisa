@@ -10,6 +10,8 @@ export const StyleDashboard = styled.main`
     flex-direction: column;
     align-content: center;
     flex-wrap: nowrap;
+    border-bottom: 2px solid var(--grey-3);
+    padding: 10px;
   }
 
   .sair
@@ -60,6 +62,13 @@ export const StyleDashboard = styled.main`
     margin: 30px 50px 20px;
   }
 
+  .list
+  {
+    width: 90%;
+    background: var(--grey-3);
+    margin: 30px 20px 20px;
+  }
+
   h3
   {
     font-size: var(--font-3);
@@ -95,10 +104,16 @@ export const StyleDashboard = styled.main`
 
   li
   {
+    background: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 30px 50px 20px;
+  }
+
+  li:hover
+  {
+    background: var(--grey-2);
   }
 
   .delete
@@ -148,6 +163,12 @@ export const StyleDashboard = styled.main`
     {
       justify-content: space-around;  
     }
+
+    .list
+    {
+      margin: 0 auto;
+      width: 80%;
+    }
   }
 
   @media(min-width: 1000px)
@@ -196,8 +217,9 @@ export const StyleDashboard = styled.main`
     .header
     {
       justify-content: space-around;
-      margin-left: 10px;
+      margin: 10px auto;
     }
+
     .tech 
     {
       justify-content: space-around;
