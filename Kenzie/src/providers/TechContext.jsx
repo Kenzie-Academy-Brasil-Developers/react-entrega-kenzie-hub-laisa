@@ -27,7 +27,7 @@ export const TechContextProvider = ({ children }) =>
         setUserLogged(response.data)
       }catch(error)
       {
-        console.log(error);
+        toast.error('Tecnologias não encotradas')
       }
     }
     techs()
@@ -86,12 +86,11 @@ export const TechContextProvider = ({ children }) =>
           Authorization: `Bearer ${token}`
         }
       })
-      console.log(data);
-      toast.success('isso')
+      toast.success('Atualizado com sucesso')
       setModalOppen(false)
     }catch(error)
     {
-      toast.error('nada')
+      toast.error('Não foi possivel atualizar')
     }
   }
 
