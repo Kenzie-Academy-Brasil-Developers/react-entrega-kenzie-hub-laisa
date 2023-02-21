@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyleDashboard = styled.main`
+  display: flex;
+  flex-direction: column;
 
   .header
   {
@@ -42,19 +44,20 @@ export const StyleDashboard = styled.main`
   p
   {
     font-size: var(--font-6);
-    font-weight: 400;
+    font-weight: 600;
     font-family: var(--font-family);
+    line-height: 20px;
     color: var(--grey-1);
-    margin: 20px 20px 30px;
+    margin: 50px 20px 30px;
   }
 
-  div
+  .tech
   {
     display: flex;
-    flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    justify-content: space-between;
+    margin: 30px 50px 20px;
   }
 
   h3
@@ -67,13 +70,60 @@ export const StyleDashboard = styled.main`
     margin: 20px 20px 30px;
   }
 
+  .edite
+  {
+    background: var(--grey-1);
+    border-radius: 4px;
+    border: none;
+  }
+
   .descricao
   {
-    font-size: var(--font-4);
+    background: var(--grey-3);
+    border: none;
+    margin: 20px 20px 30px;
+    color: var(--white);
+  }
+
+  .techAdd
+  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+  li
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 50px 20px;
+  }
+
+  .delete
+  {
+    background: none;
+    border: none;
+  }
+
+  h4
+  {
+    font-size: var(--font-5);
+    font-weight: 700;
+    font-family: var(--font-family);
+    line-height: 25px;
+    color: var(--grey-0);
+    margin: 20px 20px 30px;
+  }
+
+  h5
+  {
+    font-size: var(--font-6);
     font-weight: 400;
     font-family: var(--font-family);
-    line-height: 20px;
-    color: var(--white);
+    line-height: 25px;
+    color: var(--grey-1);
     margin: 20px 20px 30px;
   }
 
@@ -83,24 +133,20 @@ export const StyleDashboard = styled.main`
     {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      margin: 30px 50px 20px;
       text-align: center;
       flex-wrap: nowrap;
-    }
-
-    p
-    {
-      margin: 50px 20px 30px;
-    }
-
-    h3
-    {
-      margin: 20px 70px 30px;
     }
 
     .descricao
     {
       margin: 20px 70px 30px;
+    }
+
+    div
+    {
+      justify-content: space-around;  
     }
   }
 
@@ -113,7 +159,7 @@ export const StyleDashboard = styled.main`
 
     .descricao
     {
-      margin-left: 50px;
+      margin: 20px 70px 50px;
     }
   }
 
@@ -126,20 +172,42 @@ export const StyleDashboard = styled.main`
 
     .descricao
     {
-      margin-left: 0px;
+      margin: 20px 50px 90px;
+    }
+
+    div
+    {
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px 20px 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tech
+    {
+      display: flex;
+      flex-direction: row;
     }
   }
 
   @media(min-width: 1300px)
   {
-    h3
+    .header
     {
-      margin: 20px -80px 30px;
+      justify-content: space-around;
+      margin-left: 10px;
+    }
+    .tech 
+    {
+      justify-content: space-around;
+      margin: 0 auto;
     }
 
-    .descricao
+    li
     {
-      margin-left: -80px;
+      justify-content: space-around;
+      margin-left: 80px;
     }
   }
 
@@ -152,7 +220,13 @@ export const StyleDashboard = styled.main`
 
     .descricao
     {
-      margin-left: -220px;
+      margin: 20px 50px 60px;
+    }
+
+    div
+    {
+      margin: 30px 290px;
+    
     }
   }
 `

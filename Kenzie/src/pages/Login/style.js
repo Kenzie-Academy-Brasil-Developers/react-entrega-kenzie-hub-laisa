@@ -42,7 +42,21 @@ export const StyleLogin = styled.main`
     font-weight: 400;
     font-family: var(--font-family);
     color: var(--grey-0);
-    width: 260px;
+    width: 266px;
+    height: 38px;
+    background: var(--grey-2);
+    border-radius: 3.21px;
+    border: none;
+    margin: 0 auto;
+  }
+
+  .input
+  {
+    font-size: var(--font-6);
+    font-weight: 400;
+    font-family: var(--font-family);
+    color: var(--grey-0);
+    width: 266px;
     height: 38px;
     background: var(--grey-2);
     border-radius: 3.21px;
@@ -103,41 +117,49 @@ export const StyleLogin = styled.main`
 
   @media(min-width: 700px)
   {
-  h1
-  {
-    font-size: var(--font-3);
-  }
+    h1
+    {
+      font-size: var(--font-3);
+    }
 
-  label
-  {
-    font-size: var(--font-6);
-  }
+    label
+    {
+      font-size: var(--font-6);
+    }
 
-  input
-  {
-    font-size: var(--font-4);
-    width: 320px;
-    height: 48px;
-    border-radius: 4px;
-  }
+    .input
+    {
+      font-size: var(--font-4);
+      width: 320px;
+      height: 48px;
+      border-radius: 4px;
+    }
 
-  .entrar
-  {
-    font-size: var(--font-4);
-    width: 324px;
-    height: 48px;
-  }
+    input
+    {
+      font-size: var(--font-4);
+      width: 320px;
+      height: 48px;
+      border-radius: 4px;
+    }
 
-  p
-  {
-    font-size: var(--font-6);
-  }
+    .entrar
+    {
+      font-size: var(--font-4);
+      width: 324px;
+      height: 48px;
+    }
 
-  .cadastre
-  {
-    font-size: var(--font-4);
-    width: 324px;
-    height: 48px;
-  }
+    p
+    {
+      font-size: var(--font-6);
+    }
+
+    .cadastre
+    {
+      font-size: var(--font-4);
+      width: 324px;
+      height: 48px;
+    }
   }
 `

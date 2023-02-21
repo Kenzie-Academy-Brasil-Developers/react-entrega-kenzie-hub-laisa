@@ -104,7 +104,7 @@ export const StyleRegister = styled.main`
     border: none;
   }
 
- .cadastrar
+  .cadastrar
   {
     font-size: var(--font-6);
     font-weight: 500;

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Logo from '../../assets/Logo.svg';
-import { api } from '../../services/api';
 import { StyleRegister } from './style';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
+import { UserContext } from '../../providers/UserContext';
 
 const schema = yup.object({
   name: yup.string().required('Nome obrigatório'),
@@ -32,23 +31,8 @@ const schema = yup.object({
 
 const Register = () => 
 {
-  const { register, handleSubmit, reset, formState: {errors} } = useForm({ resolver: yupResolver(schema) });
-  const navigate = useNavigate();
-
-  const registerUser = async(data) =>
-  {
-    delete data.passwordConfirmation
-    try
-    {
-      await api.post('/users', data);
-      navigate('/');
-      toast.success('Conta criada com sucesso!');
-    }catch(error)
-    {
-      toast.error('Ops! Algo deu errado');
-      reset();
-    }
-  };
+  const { register, handleSubmit, formState: {errors} } = useForm({ resolver: yupResolver(schema) });
+  const { registerUser } = useContext(UserContext);
 
   return (
     <StyleRegister>

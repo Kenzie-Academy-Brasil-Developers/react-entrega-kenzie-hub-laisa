@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     --font-7: .5994rem; /*9.59px*/
 
     --font-family: 'Inter', sans-serif;
+    --font-family2: 'Nunito', sans-serif;
   }
 
   body
