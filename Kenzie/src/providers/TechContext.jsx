@@ -9,29 +9,29 @@ export const TechContextProvider = ({ children }) =>
 {
   const [id, setId] = useState('');
   const token = localStorage.getItem('@Token');
-  const { modalOpen, setUserLogged, modalOppen, setModalOppen, setModalOpen } = useContext(UserContext);
+  const { modalOpen, setUserLogged, modalOppen, setModalOppen, setModalOpen, userLogged } = useContext(UserContext);
 
-  useEffect(() => 
-  {
-    async function techs()
-    {
-      try
-      {
-        const response = await api.get('profile', 
-        {
-          headers:
-          {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        setUserLogged(response.data)
-      }catch(error)
-      {
-        toast.error('Tecnologias não encotradas')
-      }
-    }
-    techs()
-  }, [token, modalOpen, modalOppen])
+  // useEffect(() => 
+  // {
+  //   async function techs()
+  //   {
+  //     try
+  //     {
+  //       const response = await api.get('profile', 
+  //       {
+  //         headers:
+  //         {
+  //           Authorization: `Bearer ${token}`
+  //         }
+  //       })
+  //       setUserLogged(response.data)
+  //     }catch(err)
+  //     {
+  //       console.log(err);
+  //     }
+  //   }
+  //   techs()
+  // }, [token, modalOpen, modalOppen])
 
   const createTechs = async(data) =>
   {
@@ -41,10 +41,19 @@ export const TechContextProvider = ({ children }) =>
       {
         headers:
         {
-          Authorization: `Bearer ${localStorage.getItem('@Token')}`
+          Authorization: `Bearer ${token}`
         }
       })
       toast.success('Tecnologia criada')
+      const response = await api.get('/profile', 
+      {
+        headers:
+        {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      console.log(response);
+      setUserLogged(response.data)
       setModalOpen(false)
     }
     catch(error) 
@@ -86,7 +95,9 @@ export const TechContextProvider = ({ children }) =>
           Authorization: `Bearer ${token}`
         }
       })
+      console.log(data);
       toast.success('Atualizado com sucesso')
+      // setUserLogged([...userLogged.techs, data])
       setModalOppen(false)
     }catch(error)
     {

@@ -19,7 +19,7 @@ export const EditTechnology = () =>
       </div>
       <form onSubmit={handleSubmit(upTech)}>
         <label htmlFor="title">Nome do projeto</label>
-        <Input  placeholder={alt} />
+        <Input  placeholder={alt} disabled />
         <label htmlFor='status'>Status</label>
         <select {...register('status')}>
           <option value={hab} required hidden>{hab}</option>
