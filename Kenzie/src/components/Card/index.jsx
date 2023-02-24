@@ -6,11 +6,11 @@ import { UserContext } from '../../providers/UserContext';
 const Card = ({ id, status, title }) => 
 {
   const { setId } = useContext(TechContext);
-  const { setModalOppen, setAlt, setHab } = useContext(UserContext);
+  const { setModalEdit, setAlt, setHab } = useContext(UserContext);
 
   function idUser() {
     setId(id)
-    setModalOppen(true)
+    setModalEdit(true)
     setAlt(title)
     setHab(status)
   }

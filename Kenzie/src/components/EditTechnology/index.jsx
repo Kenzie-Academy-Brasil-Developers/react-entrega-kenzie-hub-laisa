@@ -7,7 +7,7 @@ import { StyleEditModal } from './style';
 
 export const EditTechnology = () =>
 {
-  const { setModalOppen, alt, hab } = useContext(UserContext);
+  const { setModalEdit, alt, hab } = useContext(UserContext);
   const { deleteTech, upTech, id } = useContext(TechContext);
   const { register, handleSubmit } = useForm();
 
@@ -15,7 +15,7 @@ export const EditTechnology = () =>
     <StyleEditModal>
       <div>
         <h4>Editar tecnologia</h4>
-        <p onClick={() => setModalOppen(false)}>X</p>
+        <p onClick={() => setModalEdit(false)}>X</p>
       </div>
       <form onSubmit={handleSubmit(upTech)}>
         <label htmlFor="title">Nome do projeto</label>

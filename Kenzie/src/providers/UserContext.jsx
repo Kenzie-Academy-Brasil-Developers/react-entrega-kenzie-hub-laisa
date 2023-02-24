@@ -10,7 +10,7 @@ export const UserContextProvider = ({ children }) =>
   const [userLogged, setUserLogged] = useState([]);
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalOppen, setModalOppen] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
   const [alt, setAlt] = useState(null);
   const [hab, setHab] = useState(null);
   const token = localStorage.getItem('@Token');
@@ -81,7 +81,7 @@ export const UserContextProvider = ({ children }) =>
   };
 
   return (
-    <UserContext.Provider value={{ loginUser, registerUser, validatingUser, userLogged, modalOpen, setModalOpen, modalOppen, setModalOppen, alt, setAlt, hab, setHab }}>
+    <UserContext.Provider value={{ loginUser, registerUser, validatingUser, userLogged, modalOpen, setModalOpen, modalEdit, setModalEdit, alt, setAlt, hab, setHab }}>
       {children}
     </UserContext.Provider>
   )

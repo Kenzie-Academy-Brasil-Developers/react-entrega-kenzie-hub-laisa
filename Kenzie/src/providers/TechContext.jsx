@@ -10,7 +10,7 @@ export const TechContextProvider = ({ children }) =>
 {
   const [id, setId] = useState('');
   const token = localStorage.getItem('@Token');
-  const { modalOpen, setUserLogged, modalOppen, setModalOppen, setModalOpen, userLogged } = useContext(UserContext);
+  const { modalOpen, setUserLogged, modalEdit, setModalEdit, setModalOpen, userLogged } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => 
@@ -33,7 +33,7 @@ export const TechContextProvider = ({ children }) =>
       }
     }
     techs()
-  }, [token, modalOpen, modalOppen])
+  }, [token, modalOpen, modalEdit])
 
   const createTechs = async(data) =>
   {
@@ -75,7 +75,7 @@ export const TechContextProvider = ({ children }) =>
         }
       })
       toast.success('Tecnologia excluida com sucesso')
-      setModalOppen(false)
+      setModalEdit(false)
     }
     catch(error)
     {
@@ -112,7 +112,7 @@ export const TechContextProvider = ({ children }) =>
       };
       requisition();
       toast.success('Atualizado com sucesso');
-      setModalOppen(false);
+      setModalEdit(false);
     }catch(error)
     {
       toast.error('Não foi possivel atualizar');

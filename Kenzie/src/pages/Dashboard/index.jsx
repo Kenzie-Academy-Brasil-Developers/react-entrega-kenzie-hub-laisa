@@ -9,7 +9,7 @@ import { EditTechnology } from '../../components/EditTechnology';
 
 const Dashboard = () => 
 {
-  const { userLogged, modalOpen, setModalOpen, modalOppen, validatingUser } = useContext(UserContext);
+  const { userLogged, modalOpen, setModalOpen, modalEdit, validatingUser } = useContext(UserContext);
 
   useEffect(() =>
   {
@@ -39,7 +39,7 @@ const Dashboard = () =>
           </ul>
         ):<></>}
       </div>
-      {modalOppen ? <EditTechnology/> : null}
+      {modalEdit ? <EditTechnology/> : null}
     </StyleDashboard>
   )
 }
