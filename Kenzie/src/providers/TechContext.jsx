@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
 import { UserContext } from './UserContext';
@@ -10,28 +11,29 @@ export const TechContextProvider = ({ children }) =>
   const [id, setId] = useState('');
   const token = localStorage.getItem('@Token');
   const { modalOpen, setUserLogged, modalOppen, setModalOppen, setModalOpen, userLogged } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  // useEffect(() => 
-  // {
-  //   async function techs()
-  //   {
-  //     try
-  //     {
-  //       const response = await api.get('profile', 
-  //       {
-  //         headers:
-  //         {
-  //           Authorization: `Bearer ${token}`
-  //         }
-  //       })
-  //       setUserLogged(response.data)
-  //     }catch(err)
-  //     {
-  //       console.log(err);
-  //     }
-  //   }
-  //   techs()
-  // }, [token, modalOpen, modalOppen])
+  useEffect(() => 
+  {
+    async function techs()
+    {
+      try
+      {
+        const response = await api.get('profile', 
+        {
+          headers:
+          {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setUserLogged(response.data)
+      }catch(err)
+      {
+        
+      }
+    }
+    techs()
+  }, [token, modalOpen, modalOppen])
 
   const createTechs = async(data) =>
   {
@@ -45,21 +47,18 @@ export const TechContextProvider = ({ children }) =>
         }
       })
       toast.success('Tecnologia criada')
-      const response = await api.get('/profile', 
+      await api.get('/profile', 
       {
         headers:
         {
           Authorization: `Bearer ${token}`
         }
       })
-      console.log(response);
-      setUserLogged(response.data)
       setModalOpen(false)
     }
     catch(error) 
     {
-      console.log(error);
-      toast.error('Ops! Algo deu errado')
+
     }
   }
 
@@ -95,13 +94,28 @@ export const TechContextProvider = ({ children }) =>
           Authorization: `Bearer ${token}`
         }
       })
-      console.log(data);
-      toast.success('Atualizado com sucesso')
-      // setUserLogged([...userLogged.techs, data])
-      setModalOppen(false)
+      const requisition = (data) =>
+      {
+        if(token)
+        {
+          api.defaults.headers.authorization = `Bearer ${token}`;
+          api.get('profile', data)
+          .then((response) => 
+          {
+            setUserLogged(response.data);
+            navigate('/dashboard');
+          })
+          .catch((error) => 
+            console.log(error)
+          );
+        }
+      };
+      requisition();
+      toast.success('Atualizado com sucesso');
+      setModalOppen(false);
     }catch(error)
     {
-      toast.error('Não foi possivel atualizar')
+      toast.error('Não foi possivel atualizar');
     }
   }
 

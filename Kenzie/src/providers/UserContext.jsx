@@ -32,7 +32,6 @@ export const UserContextProvider = ({ children }) =>
     {
       toast.error('Email ou senha incorretos');
     });
-    console.log(data);
   };
 
   useEffect(() =>
@@ -66,7 +65,6 @@ export const UserContextProvider = ({ children }) =>
     {
       toast.error('Ops! Algo deu errado');
     }
-    console.log(data);
   };
 
   const validatingUser = () =>
